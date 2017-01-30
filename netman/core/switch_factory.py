@@ -13,7 +13,7 @@
 # limitations under the License.
 from netman.core.objects.flow_control_switch import FlowControlSwitch
 
-from netman.adapters.switches import cisco, juniper, dell, dell10g, brocade
+from netman.adapters.switches import cisco, juniper, dell, dell10g, brocade, memory
 from netman.adapters.switches.remote import RemoteSwitch
 from netman.core.objects.switch_descriptor import SwitchDescriptor
 
@@ -30,6 +30,7 @@ factories = {
     "dell10g": dell10g.ssh,
     "dell10g_ssh": dell10g.ssh,
     "dell10g_telnet": dell10g.telnet,
+    "memory": memory.get_from_descriptor,
 }
 
 

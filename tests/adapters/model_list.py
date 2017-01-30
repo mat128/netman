@@ -23,7 +23,26 @@ from fake_switches.switch_configuration import Port
 from fake_switches.telnet_service import SwitchTelnetService
 from netman.core.objects.switch_descriptor import SwitchDescriptor
 
+# TODO(mmitchell): Ugly hack. To refactor.
 available_models = [
+    {
+        "switch_descriptor": SwitchDescriptor(
+            model="memory",
+            hostname="127.0.0.1", # Bogus, won't be used.
+            port=11001, # Bogus, won't be used.
+            username="root", # Bogus, won't be used.
+            password="root", # Bogus, won't be used.
+        ),
+        "test_port_name": "Port 1",
+        "core_class": CiscoSwitchCore, # Bogus, won't be used.
+        "service_class": SwitchSshService, # Bogus, won't be used.
+        "ports": [ # Bogus, won't be used.
+            Port("Port 1"),
+            Port("Port 2"),
+            Port("Port 3"),
+            Port("Port 4"),
+        ]
+    },
     {
         "switch_descriptor": SwitchDescriptor(
             model="cisco",
